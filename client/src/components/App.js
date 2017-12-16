@@ -10,6 +10,7 @@ import AuthRoute from './AuthRoute';
 import FetchUser from './FetchUser';
 import { Switch, Route } from 'react-router-dom';
 import Profile from './Profile'
+import Post from './Post'
 
 
 class App extends Component {
@@ -26,7 +27,8 @@ class App extends Component {
           <Switch>
             <ProtectedRoute exact path='/' component={Home} />
             <AuthRoute exact path='/login' component={Login} />
-            <ProtectedRoute exact path = '/profile' component={Profile} />}
+            <ProtectedRoute exact path = '/profile' component={Profile} />
+            <ProtectedRoute exact path = '/posts/:id' component={Post} />
             <AuthRoute exact path='/register' component={Register} />
             <Route component={NoMatch} />
           </Switch>

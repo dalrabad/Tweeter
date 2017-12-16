@@ -29,7 +29,7 @@ class Register extends Component {
 
     return (
       <Segment basic>
-        <Header as='h1' textAlign='center'>Register Component</Header>
+        <Header as='h1' textAlign='center'>Register</Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
             <label htmlFor='email'>Email</label>
@@ -63,8 +63,8 @@ class Register extends Component {
               onChange={this.handleChange}
             />
           </Form.Field>
-          <Segment basic textAlign='center'>
-            <Button type='submit'>Submit</Button>
+          <Segment textAlign='center' basic>
+            <Button primary type='submit'>Submit</Button>
           </Segment>
         </Form>
       </Segment>

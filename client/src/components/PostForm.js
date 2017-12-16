@@ -13,7 +13,11 @@ class PostForm extends React.Component{
   handleSubmit = (e) => {
     e.preventDefault()
     const {name, value} =e.target
-    this.props.addpost(this.state.name, this.state.body, this.state.image)
+    if(this.props.post) {
+      this.props.updatepost(this.state.name, this.state.body, this.state.image)
+    } else {
+      this.props.addpost(this.state.name, this.state.body, this.state.image)
+    }
     this.setState({[name]: value })
   }
 
@@ -40,7 +44,7 @@ class PostForm extends React.Component{
       onChange = {this.handleChange}
       />
       <button>
-        submit
+        { this.state.body != ''  ? "update" : "submit" }
       </button>
       </form>
     )

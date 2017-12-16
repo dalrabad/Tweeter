@@ -4,6 +4,15 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleLogout } from '../actions/auth';
 
+
+
+//
+// const styles = {
+//   background: {
+//     style={stylesGradient}
+//      colors={['#5ED2A0', '#339CB1']}
+//   }
+// }
 class NavBar extends Component {
   rightNavs = () => {
     const { user, dispatch, history } = this.props;
@@ -21,10 +30,10 @@ class NavBar extends Component {
     return (
       <Menu.Menu position='right'>
         <Link to='/register'>
-          <Menu.Item name='Register' />
+          <Menu.Item style={{ color: 'white' }} name='Register' />
         </Link>
         <Link to='/login'>
-          <Menu.Item name='Login' />
+          <Menu.Item style={{ color: 'white' }} name='Login' />
         </Link>
       </Menu.Menu>
     );
@@ -32,14 +41,15 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ background: 'linear-gradient(to right, #38ef7d, #11998e)', color: 'white' }}>
         <Menu pointing secondary>
           <Link to='/'>
-            <Menu.Item name='home' />
+            <Menu.Item style={{ color: 'white' }} name='home' />
           </Link>
-          <Link to='/profile'>
-            <Menu.Item name='Profile' />
+          <Link to='/Profile'>
+            <Menu.Item style={{ color: 'white' }}  name='profile' />
           </Link>
+
           { this.rightNavs() }
         </Menu>
       </div>

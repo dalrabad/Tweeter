@@ -22,13 +22,6 @@ addpost = (name, body, image) => {
     
 }
 
-// Updatepost = (name, body, image) => {
-//   let post = {name, body, image};
-//   axios.post(`/api/posts/${this.state.match.params.id}`, {post })
-//     .then ( res => this.setState({posts:[res.data, ...this.state.posts]}))
-    
-// }
-
   render() {
     return (
       <div>
@@ -37,8 +30,8 @@ addpost = (name, body, image) => {
         {this.state.posts.map( p => (
           <div>
             <Link to = {`/posts/${p.id}`}> {p.name}</Link>
-            <h2>{p.author}</h2> 
-            <h2>{p.image}</h2>
+            <h3>{p.body}</h3> 
+            <h3>{p.image}</h3>
           </div>
         )
         )}

@@ -3,6 +3,10 @@ class Api::PostsController < ApplicationController
     render json: Post.all
   end
 
+  def show
+    render json: Post.find(params[:id])
+  end
+
   def create
     post = current_user.posts.new(post_params)
     if post.save
@@ -15,7 +19,7 @@ class Api::PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update_attributesp(post_params)
+    post.update_attributes(post_params)
     render json: post 
     
   end

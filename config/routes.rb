@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'api/auth'
   namespace :api do
     resources :bios, only: [:index, :create, :update, :destroy]
-    resources :posts, only: [:index, :create, :update, :destroy]
+    resources :posts, only: [:index, :create, :update, :destroy, :show]
     resources :comments, only: [:index, :create, :update, :destroy]
     
   end
