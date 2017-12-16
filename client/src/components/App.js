@@ -9,8 +9,14 @@ import ProtectedRoute from './ProtectedRoute';
 import AuthRoute from './AuthRoute';
 import FetchUser from './FetchUser';
 import { Switch, Route } from 'react-router-dom';
+import Profile from './Profile'
+
 
 class App extends Component {
+
+
+
+
   render() {
     return (
       <div>
@@ -18,8 +24,9 @@ class App extends Component {
         <Flash />
         <FetchUser>
           <Switch>
-            <Route exact path='/' component={Home} />
+            <ProtectedRoute exact path='/' component={Home} />
             <AuthRoute exact path='/login' component={Login} />
+            <ProtectedRoute exact path = '/profile' component={Profile} />}
             <AuthRoute exact path='/register' component={Register} />
             <Route component={NoMatch} />
           </Switch>
